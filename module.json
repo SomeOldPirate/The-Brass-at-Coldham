@@ -2,7 +2,7 @@
   "id": "brass-at-coldham",
   "title": "Jamesian Dark: The Brass at Coldham",
   "description": "<p>A one-session playtest scenario for Jamesian Dark, for two to four players, set in Norfolk in October 1908. A dead antiquary's brass rubbing has brought something home with it, and the Investigators have come to finish his work.</p>",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "compatibility": {
     "minimum": "14",
     "verified": "14.367"
@@ -20,8 +20,8 @@
         "id": "jamesian-dark",
         "type": "system",
         "compatibility": {
-          "minimum": "1.0.0",
-          "verified": "1.0.0"
+          "minimum": "2.0.0",
+          "verified": "2.0.0"
         },
         "manifest": "https://github.com/SomeOldPirate/Jamesian-Dark/releases/latest/download/system.json"
       }
