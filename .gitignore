@@ -1,0 +1,6 @@
+.DS_Store
+*.zip
+*.pdf
+packs/*/LOCK
+packs/*/LOG
+packs/*/LOG.old

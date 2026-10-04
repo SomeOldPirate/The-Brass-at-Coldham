@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <radialGradient id="stone" cx="50%" cy="40%" r="75%">
+      <stop offset="0" stop-color="#2e2a26"/>
+      <stop offset="1" stop-color="#0b0a09"/>
+    </radialGradient>
+    <linearGradient id="brass" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#b79a55"/>
+      <stop offset=".5" stop-color="#94742a"/>
+      <stop offset="1" stop-color="#5e4812"/>
+    </linearGradient>
+    <filter id="worn"><feGaussianBlur stdDeviation=".8"/></filter>
+  </defs>
+  <rect width="512" height="512" fill="url(#stone)"/>
+  <!-- the slab -->
+  <rect x="136" y="28" width="240" height="456" fill="#1a1714" stroke="#3a332b" stroke-width="2"/>
+  <g filter="url(#worn)">
+    <!-- the figure: a tall priest in mass vestments -->
+    <path d="M256 52c-21 0-34 17-34 40 0 16 7 29 17 36-27 8-45 22-51 44-9 36-13 92-15 148-1 34-3 62-7 86h32l4 26h108l4-26h32c-4-24-6-52-7-86-2-56-6-112-15-148-6-22-24-36-51-44 10-7 17-20 17-36 0-23-13-40-34-40z" fill="url(#brass)"/>
+    <!-- the face, worn smooth -->
+    <ellipse cx="256" cy="92" rx="23" ry="29" fill="#a98c47"/>
+    <!-- chasuble and orphrey -->
+    <path d="M205 172c16 70 34 138 51 196 17-58 35-126 51-196" fill="none" stroke="#3d2f0c" stroke-opacity=".7" stroke-width="3"/>
+    <path d="M256 140v266M232 144c8 10 40 10 48 0" fill="none" stroke="#3d2f0c" stroke-opacity=".6" stroke-width="3"/>
+    <!-- hands, joined -->
+    <path d="M244 214c2-22 6-36 12-44 6 8 10 22 12 44-8 6-16 6-24 0z" fill="#b79a55" stroke="#3d2f0c" stroke-opacity=".7" stroke-width="2.5"/>
+    <!-- alb and feet -->
+    <path d="M206 406c16 6 84 6 100 0M226 432v-24M256 432v-24M286 432v-24" fill="none" stroke="#3d2f0c" stroke-opacity=".6" stroke-width="3"/>
+  </g>
+  <!-- the inscription plate; the last line under the pew rail -->
+  <rect x="160" y="444" width="192" height="26" fill="url(#brass)" opacity=".9"/>
+  <path d="M168 452h176M168 458h150M168 464h60" stroke="#3d2f0c" stroke-opacity=".75" stroke-width="2" stroke-dasharray="7 3 12 3 4 3"/>
+</svg>
