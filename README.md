@@ -32,6 +32,8 @@ There are no scenes or maps.
   photograph counts, and the scenario asks the GM not to. They are on the journal's Investigators page.
 - **Curio** descriptions say only what a player would learn on being handed the object. What is inside the
   sealed letter is on the Haunting, as discovery 6.
+- The photograph is the scenario's **loose end**. If the plate is never burned, the GM ticks *A loose end* under the
+  epilogue on Miss Arbery's sheet (Jamesian Dark 2.1.0), which moves her one band worse.
 - The local people (Bream, Mrs Tooley, Nobbs, Dr Lacey) are journal text. The system has no actor type for them.
 
 ## Building

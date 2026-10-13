@@ -23,17 +23,17 @@ const frame = "I was asked, many years afterwards, why Miss Arbery’s album has
 // Delivered to the table as written, so each is worded for the players.
 const warnings = [
   "The inscription on the brass: Qui me effigiat, me secum ducat. “Whoever makes my likeness, let him lead me with him.”",
-  "The pew over Master Pell’s brass was screwed down for two centuries.",
+  "The squire’s pew over Master Pell’s brass was screwed down for two centuries.",
   "Ezra Nobbs, the sexton, will not enter the chancel. “He wants a face, old Pell. Can’t have ours.”",
   "Mrs Tooley: “Poor Mr Fairfax was never right after he brought that paper back from the church. Wanted the lamp left burning, he did.”",
-  "The churchwardens’ accounts for 1688: “faggots to burn ye picture upon ye stone”, and “screwing down ye pew over Mr Pell”."
+  "The churchwardens’ accounts for 1688: “faggots to burn ye picture upon ye stone”, and “setting ye Squire’s pew over Mr Pell”."
 ];
 
 // Revealed to the table as written: what each discovery tells them. The routes are in the notes.
 const provenance = [
   ["The full inscription", "Qui me effigiat, me secum ducat: whoever makes a likeness leads Pell with them."],
   ["Fairfax’s notebook", "His last weeks: scraping at night, the rubbing re-rolled, smears on his pillow, “he is nearer each night”, “I did not know my own face in the glass this morning.”"],
-  ["The churchwardens’ accounts, 1688", "Payments for “faggots to burn ye picture upon ye stone” and “screwing down ye pew over Mr Pell”, plus an older entry copied in, for “scraping ye face of Mr Pell”: the precedent for laying it to rest."],
+  ["The churchwardens’ accounts, 1688", "Payments for “faggots to burn ye picture upon ye stone” and “setting ye Squire’s pew over Mr Pell”, plus an older entry copied in, for “scraping ye face of Mr Pell”: the precedent for laying it to rest."],
   ["Nobbs’s story", "The drawing-master pulled out of the Broad; Pell “wants a face.”"],
   ["The inquest", "Fairfax drowned in two feet of water, and his face was gone: not torn, simply gone."],
   ["Fairfax’s sealed letter", "Addressed to his sister, never posted. He understood, too late, that the rubbing must go back to the stone."]
@@ -62,7 +62,7 @@ const haunting = {
   folder: ids.folders.actors,
   sort: 100000,
   system: {
-    transgression: "In 1907 Mr Lionel Fairfax, against the sexton’s advice, unscrewed the pew over Master Adam Pell’s brass in St Edmund’s, rubbed the brass with heelball, and carried the rubbing back to his room at the rectory. That December he was found drowned in the dyke beside the causeway, the front of his head smooth and featureless, the skin unbroken, like brass worn down by centuries of feet.",
+    transgression: "In early September 1908 Mr Lionel Fairfax, against the sexton’s advice, unscrewed the squire’s pew over Master Adam Pell’s brass in St Edmund’s, dragged it aside, rubbed the brass with heelball, and carried the rubbing back to his room at the rectory. Six weeks later, in mid-October, he was found drowned in the dyke beside the causeway, the front of his head smooth and featureless, the skin unbroken, like brass worn down by centuries of feet.",
     thing: "Master Adam Pell, rector of St Edmund’s from 1452 to 1479. Tall, thin and dry, dressed in something like a chasuble, and where his face should be there is only smooth, scraped skin. He wants a face: he walks between his likeness and whoever has noticed him, and he means to take that person’s face.",
     tether: "Every image of the brass: Fairfax’s rubbing, any new rubbing, a sketch, a photograph. Each one is a door, and Pell follows the person who keeps or makes it.",
     restitution: "Every image of the brass must be laid on the stone and burned there, as in 1688. Then the pew goes back. That is all, and it is enough.",
@@ -139,7 +139,7 @@ const items = [
   curio(ids.kirby, "Kirby’s Norfolk Brasses (1838)", "The Rev. Mr Bream’s study at the rectory",
     "The entry for Coldham gives the inscription on the Pell brass. The last line is marked “imperfect”, but a footnote guesses it: <em>Qui me effigiat, me secum ducat</em>.", 400000),
   curio(ids.accounts, "The churchwardens’ accounts, 1688", "The parish chest at the rectory",
-    "Payments for “faggots to burn ye picture upon ye stone” and for “screwing down ye pew over Mr Pell”, and an older entry copied in, for “scraping ye face of Mr Pell”.", 500000)
+    "Payments for “faggots to burn ye picture upon ye stone” and for “setting ye Squire’s pew over Mr Pell”, and an older entry copied in, for “scraping ye face of Mr Pell”.", 500000)
 ].map(i => ({ ...i, folder: ids.folders.items }));
 
 /* -------------------------------------------- */
