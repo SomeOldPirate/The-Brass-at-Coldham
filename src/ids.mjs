@@ -26,6 +26,7 @@ export const ids = {
   kirby: id("Kirby"),
   accounts: id("Accounts"),
   camera: id("Camera"),
+  haleLetter: id("HaleLetter"),
 
   journal: id("Journal"),
   pages: {

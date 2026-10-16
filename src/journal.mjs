@@ -9,6 +9,9 @@ const actor = (id, label) => `@UUID[Actor.${id}]{${label}}`;
 const item = (id, label) => `@UUID[Item.${id}]{${label}}`;
 const page = (id, label) => `@UUID[JournalEntry.${ids.journal}.JournalEntryPage.${id}]{${label}}`;
 
+/** Fairfax's letter to Hale, the handout given to Hale's player at the start. */
+export const haleLetter = "Coldham Rectory, August 1908. My dear Hale, — St Edmund’s has a fine priest of about 1470, and an inscription Kirby marks imperfect, the last line being under the squire’s pew. Kirby guesses <em>pro me oret</em>, and says old Pell positively asks to be rubbed. I mean to have the pew up and settle it. Your eye on the result would oblige me greatly. — L. Fairfax";
+
 export const pages = [
   {
     _id: ids.pages.using,
@@ -19,7 +22,7 @@ export const pages = [
 <ul>
   <li><strong>${actor(ids.haunting, "The Brass at Coldham")}</strong>, the Haunting. Its sheet holds the transgression, the thing, its tether and the restitution; the narrator’s frame; the five warnings, the six Provenance discoveries and a list of glimpses, to speak from at the table. Each Provenance discovery has a button that posts it to chat as a handout. Its Notes tab is a one-page reference for use during play.</li>
   <li><strong>Four Investigators</strong>: ${actor(ids.hale, "Dr Edmund Hale")}, ${actor(ids.arbery, "Miss Constance Arbery")}, ${actor(ids.pym, "Rev. Francis Pym")} and ${actor(ids.thursby, "Mr George Thursby")}. Assign each to a player from the Actors sidebar (right-click, Configure Ownership). Each sheet’s notes say why they came. Their temptations are on the ${page(ids.pages.investigators, "Investigators")} page and are not printed on the sheets.</li>
-  <li><strong>Five Curios</strong> to hand over as they are found, by dragging them onto an Investigator’s sheet: ${item(ids.rubbing, "Fairfax’s rubbing")}, ${item(ids.notebook, "his notebook")}, ${item(ids.letter, "his sealed letter")}, ${item(ids.kirby, "Kirby’s Norfolk Brasses")} and ${item(ids.accounts, "the churchwardens’ accounts")}. Miss Arbery already carries her camera.</li>
+  <li><strong>Five Curios</strong> to hand over as they are found, by dragging them onto an Investigator’s sheet: ${item(ids.rubbing, "Fairfax’s rubbing")}, ${item(ids.notebook, "his notebook")}, ${item(ids.letter, "his sealed letter")}, ${item(ids.kirby, "Kirby’s Norfolk Brasses")} and ${item(ids.accounts, "the churchwardens’ accounts")}. Miss Arbery already carries her camera, and Dr Hale ${item(ids.haleLetter, "Fairfax’s letter")}.</li>
   <li><strong>This journal</strong>, the scenario in full.</li>
 </ul>
 <p>The scenario has one loose end, the photograph (see ${page(ids.pages.rest, "Laying it to rest")}). If it applies, tick <em>A loose end</em> under the epilogue on Miss Arbery’s sheet, and the system moves her one band worse.</p>
@@ -32,10 +35,11 @@ export const pages = [
     content: `
 <p>Whoever makes an image of Master Adam Pell’s brass takes Pell home with them, and Pell takes their face. That is the whole secret of Coldham.</p>
 <p><strong>Master Adam Pell</strong> was rector of St Edmund’s, Coldham, from 1452 to 1479. He was feared in life and rumoured to dabble in things a priest should leave alone. His brass lies in the chancel floor: a tall figure in mass vestments. When he died, his parishioners paid to have its face scraped away, so that nothing of him would look out at them again. Pell has wanted a face ever since. Its inscription ends: <em>Qui me effigiat, me secum ducat</em> — “Whoever makes my likeness, let him lead me with him.”</p>
-<p><strong>1688.</strong> A Norwich drawing-master sketched the brass. He was pulled out of the Broad six weeks later, and the coroner’s men would not describe his face. The rector of the day burned the drawing on the brass itself, and the trouble stopped. The churchwardens then set the squire’s new box pew, a great panelled square nine feet across, directly over the stone and screwed it to the floor, and recorded both payments.</p>
-<p><strong>August–September 1908.</strong> Mr Lionel Fairfax, a quiet antiquary compiling a county survey of monumental brasses for the Norfolk and Norwich Archaeological Society, lodged at the rectory. In early September, against the sexton’s advice, he unscrewed the squire’s pew, dragged it aside, rubbed the brass with heelball, and carried the rubbing back to his room.</p>
+<p><strong>1688.</strong> A Norwich drawing-master sketched the brass. He was pulled out of the Broad six weeks later, and the coroner’s men would not describe his face. The rector of the day burned the drawing on the brass itself, and the trouble stopped. The churchwardens then set the squire’s new box pew, a great panelled square nine feet across, over the stone, with the brass inside it. The bottom rail of its west side ran across the foot of the slab, and the carpenters drove its long screws straight through the last line of the inscription. Having taken his face, the parish now silenced his words. The churchwardens recorded every payment.</p>
+<p><strong>1838.</strong> Kirby’s <em>Norfolk Brasses</em> records the brass from inside the squire’s pew. The last line lies under the rail, so Kirby prints the inscription as far as <em>Qui me effigiat…</em>, marks the brass “imperfect”, and guesses the rest in a footnote: <em>pro me oret</em>, “let him pray for me”. It is the commonest sentiment on medieval brasses, and it fits the space. “A pleasing sentiment,” he adds, “and one the brass-rubber may take as an invitation.” The true words are <em>me secum ducat</em>.</p>
+<p><strong>August–September 1908.</strong> Mr Lionel Fairfax, a quiet antiquary compiling a county survey of monumental brasses for the Norfolk and Norwich Archaeological Society, lodged at the rectory. Kirby’s footnote charmed him, and in August he wrote to Dr Hale that old Pell “positively asks to be rubbed”. In early September, against the sexton’s advice, he unscrewed the squire’s pew, dragged it aside and took up the rail. The last line beneath was pierced with screw holes and rotted with rust; only <em>…me secum d…</em> survived. He rubbed the brass with heelball anyway and carried the rubbing back to his room. On the rubbing, the lost word is whole.</p>
 <p><strong>Mid-October 1908.</strong> Six weeks later, exactly as long as the drawing-master lasted, Fairfax was found drowned in two feet of water in the dyke beside the causeway. The front of his head was smooth and featureless, the skin unbroken, like brass worn down by centuries of feet. The inquest blamed the eels and recorded misadventure. His body went home to Norwich by train in a sealed coffin, and he was buried in the family plot a week ago. The undertaker advised his sister not to view him.</p>
-<p><strong>Now, late October 1908.</strong> About a fortnight after his death, his effects sit boxed in his old room at the rectory, including a tin case of rubbings. The pew has not been put back: the churchwardens have not yet met, and nobody wants to be the one who touches it. The face on the rubbing is Fairfax’s. Pell is waiting with it, and he will follow whoever takes it up.</p>`
+<p><strong>Now, late October 1908.</strong> About a fortnight after his death, his effects sit boxed in his old room at the rectory, including a tin case of rubbings. The pew has not been put back, and the rail lies loose across the slab where Fairfax dropped it. The churchwardens have not yet met, and nobody wants to be the one who touches either. The face on the rubbing is Fairfax’s. Pell is waiting with it, and he will follow whoever takes it up.</p>`
   },
   {
     _id: ids.pages.thing,
@@ -54,7 +58,8 @@ export const pages = [
     <tr><td>6</td><td>The Visit, the next time they are alone.</td></tr>
   </tbody>
 </table>
-<p><strong>The rubbing changes.</strong> The figure on Fairfax’s rubbing has Fairfax’s face, though the brass has none. Each morning his features are a little softer, and someone else’s begin to show through: whoever keeps the rubbing, or whoever has handled it most. Anyone who examines it closely makes a Notice roll.</p>`
+<p><strong>The rubbing changes.</strong> The figure on Fairfax’s rubbing has Fairfax’s face, though the brass has none. Each morning his features are a little softer, and someone else’s begin to show through: whoever keeps the rubbing, or whoever has handled it most. Anyone who examines it closely makes a Notice roll.</p>
+<p><strong>The rubbing is complete.</strong> Where the brass has only screw holes, the rubbing shows the last word whole: <em>ducat</em>, crisp and black. Heelball cannot take up letters that are not there. This is the moment the players should realise the rubbing is not a copy.</p>`
   },
   {
     _id: ids.pages.investigators,
@@ -71,7 +76,9 @@ export const pages = [
   </tbody>
 </table>
 <p>Use three for a first playtest. Thursby is a spare, or a replacement after a Visit.</p>
-<p><strong>Miss Arbery carries a half-plate camera.</strong> Say so at the start, and don’t remind anyone that a photograph is an image.</p>`
+<p><strong>Miss Arbery carries a half-plate camera.</strong> Say so at the start, and don’t remind anyone that a photograph is an image.</p>
+<p><strong>${item(ids.haleLetter, "Fairfax’s letter to Hale")}.</strong> Give this to Hale’s player at the start:</p>
+<blockquote><p>${haleLetter}</p></blockquote>`
   },
   {
     _id: ids.pages.opening,
@@ -93,7 +100,7 @@ export const pages = [
 <ul>
   <li><strong>The rectory.</strong> Damp, comfortable, full of moth cabinets. Holds Fairfax’s room, his tin case of rubbings, his notebook, and the parish chest with the churchwardens’ accounts.</li>
   <li><strong>The causeway.</strong> Raised track with a deep dyke on one side and reeds on the other. Fairfax drowned here. Sea fog comes in after dark.</li>
-  <li><strong>St Edmund’s church.</strong> Round flint tower, cold chancel. The Pell brass lies in the floor inside a pale square of unworn stone. The squire’s box pew that stood there for two centuries has been dragged aside, but the bottom rail of its west side is still screwed down across the foot of the slab and hides the last line of the inscription.</li>
+  <li><strong>St Edmund’s church.</strong> Round flint tower, cold chancel. The Pell brass lies in the floor inside a pale square of unworn stone. The squire’s box pew that stood around it for two centuries has been dragged aside, and the bottom rail of its west side lies loose across the slab. Where the rail sat, the last line of the inscription is pierced with screw holes and rotted with rust: only <em>…me secum d…</em> can be read.</li>
   <li><strong>The Wherry inn.</strong> Low beams, eel-catchers, a good fire. Locals talk freely about Fairfax, less freely about the church.</li>
 </ul>
 <h2>People</h2>
@@ -112,9 +119,9 @@ export const pages = [
 <table>
   <thead><tr><th>#</th><th>Discovery</th><th>What it reveals</th><th>Safe route</th><th>Meddling route</th></tr></thead>
   <tbody>
-    <tr><td>1</td><td>The full inscription</td><td><em>Qui me effigiat, me secum ducat</em>: whoever makes a likeness leads Pell with them</td><td>${item(ids.kirby, "Kirby’s Norfolk Brasses (1838)")} in Bream’s study; the last line is marked “imperfect” but a footnote guesses it</td><td>Prise up the pew’s sill to read it, or read it aloud from the rubbing</td></tr>
+    <tr><td>1</td><td>The full inscription</td><td><em>Qui me effigiat, me secum ducat</em>: whoever makes a likeness leads Pell with them</td><td>The pierced brass (<em>…me secum d…</em>) set against ${item(ids.kirby, "Kirby’s Norfolk Brasses (1838)")} in Bream’s study, whose footnote guesses the harmless <em>pro me oret</em>. The contradiction is the clue: a competent reading supplies <em>ducat</em>. A close look at the rubbing also shows the word whole (with a Notice roll)</td><td>Read it aloud, or unroll the rubbing on the brass, where the lost word lies exactly over the screw holes</td></tr>
     <tr><td>2</td><td>${item(ids.notebook, "Fairfax’s notebook")}</td><td>His last weeks: scraping at night, the rubbing re-rolled, smears on his pillow, “he is nearer each night”, “I did not know my own face in the glass this morning”</td><td>In his boxed effects</td><td>—</td></tr>
-    <tr><td>3</td><td>${item(ids.accounts, "The churchwardens’ accounts, 1688")}</td><td>Payments for “faggots to burn ye picture upon ye stone” and “setting ye Squire’s pew over Mr Pell”, plus an older entry copied in, for “scraping ye face of Mr Pell”: the precedent for laying it to rest</td><td>Parish chest, with Bream’s permission</td><td>—</td></tr>
+    <tr><td>3</td><td>${item(ids.accounts, "The churchwardens’ accounts, 1688")}</td><td>Payments for “faggots to burn ye picture upon ye stone”, “setting ye Squire’s pew over Mr Pell” and “long skrewes to fasten ye same through Mr Pell his writing”, plus an older entry copied in, for “scraping ye face of Mr Pell”: the precedent for laying it to rest</td><td>Parish chest, with Bream’s permission</td><td>—</td></tr>
     <tr><td>4</td><td>Nobbs’s story</td><td>The drawing-master pulled out of the Broad; Pell “wants a face”</td><td>Patience and a pint at the Wherry</td><td>Pressing him in the chancel, which he refuses to enter</td></tr>
     <tr><td>5</td><td>The inquest</td><td>Fairfax drowned in two feet of water, and his face was gone: not torn, simply gone</td><td>Dr Lacey, if asked privately and kindly</td><td>—</td></tr>
     <tr><td>6</td><td>${item(ids.letter, "Fairfax’s sealed letter")}</td><td>Addressed to his sister, never posted. He understood, too late, that the rubbing must go back to the stone</td><td>Bream mentions it; returning it unopened is safe</td><td>Opening it gives the whole answer at once</td></tr>
@@ -127,13 +134,13 @@ export const pages = [
     name: "Warnings and meddling",
     content: `
 <p>Coldham is full of warnings. Point to them freely; ignoring one is meddling, and players should be able to see that.</p>
-<p><strong>The warnings:</strong> the inscription itself; the pew screwed down for two centuries; Nobbs refusing to enter the chancel; Mrs Tooley’s “never right after he brought that paper back”; the 1688 accounts.</p>
+<p><strong>The warnings:</strong> the inscription itself; the pew screwed down over him for two centuries, its screws driven through his words; Nobbs refusing to enter the chancel; Mrs Tooley’s “never right after he brought that paper back”; the 1688 accounts.</p>
 <p><strong>The bargains to offer</strong></p>
 <table>
   <thead><tr><th>Meddling act</th><th>What it gets you</th><th>Extra consequence</th></tr></thead>
   <tbody>
     <tr><td>Reading the inscription aloud</td><td>Discovery 1 at once</td><td>None beyond the Meddle die</td></tr>
-    <tr><td>Prising up the pew’s sill</td><td>Discovery 1 at once, from the stone itself</td><td>Nobbs sees it and will not speak to them again</td></tr>
+    <tr><td>Unrolling the rubbing on the brass</td><td>Discovery 1 at once: the lost word lies exactly over the screw holes</td><td>Nobbs sees it and will not speak to them again</td></tr>
     <tr><td>Opening Fairfax’s sealed letter</td><td>Discovery 6: the full answer</td><td>None beyond the Meddle die</td></tr>
     <tr><td>Taking the rubbing to your own room</td><td>A close study of how it changes</td><td>Pell now follows you, not the empty room</td></tr>
     <tr><td>Making a new rubbing or photograph</td><td>A perfect record of the brass for the survey</td><td>A second image: it must also be burned, or Pell follows its keeper</td></tr>
@@ -194,11 +201,12 @@ export const hauntingNotes = `
   </tbody>
 </table>
 <p><strong>The rubbing changes.</strong> The figure on Fairfax’s rubbing has Fairfax’s face, though the brass has none. Each morning his features are a little softer, and someone else’s begin to show through: whoever keeps the rubbing, or whoever has handled it most. Anyone who examines it closely makes a Notice roll.</p>
+<p><strong>The rubbing is complete.</strong> Where the brass has only screw holes, the rubbing shows the last word whole: <em>ducat</em>, crisp and black. Heelball cannot take up letters that are not there. This is the moment the players should realise the rubbing is not a copy.</p>
 <h3>Where each discovery is found</h3>
 <table>
   <thead><tr><th>#</th><th>Safe route</th><th>Meddling route</th></tr></thead>
   <tbody>
-    <tr><td>1</td><td>Kirby’s <em>Norfolk Brasses</em> (1838) in Bream’s study; the last line is marked “imperfect” but a footnote guesses it</td><td>Prise up the pew’s sill to read it, or read it aloud from the rubbing</td></tr>
+    <tr><td>1</td><td>The pierced brass (<em>…me secum d…</em>) set against Kirby’s <em>Norfolk Brasses</em> (1838) in Bream’s study, whose footnote guesses the harmless <em>pro me oret</em>. The contradiction is the clue: a competent reading supplies <em>ducat</em>. A close look at the rubbing also shows the word whole (with a Notice roll)</td><td>Read it aloud, or unroll the rubbing on the brass, where the lost word lies exactly over the screw holes</td></tr>
     <tr><td>2</td><td>In Fairfax’s boxed effects</td><td>—</td></tr>
     <tr><td>3</td><td>Parish chest, with Bream’s permission</td><td>—</td></tr>
     <tr><td>4</td><td>Patience and a pint at the Wherry</td><td>Pressing Nobbs in the chancel, which he refuses to enter</td></tr>
@@ -212,7 +220,7 @@ export const hauntingNotes = `
   <thead><tr><th>Meddling act</th><th>What it gets you</th><th>Extra consequence</th></tr></thead>
   <tbody>
     <tr><td>Reading the inscription aloud</td><td>Discovery 1 at once</td><td>None beyond the Meddle die</td></tr>
-    <tr><td>Prising up the pew’s sill</td><td>Discovery 1 at once, from the stone itself</td><td>Nobbs sees it and will not speak to them again</td></tr>
+    <tr><td>Unrolling the rubbing on the brass</td><td>Discovery 1 at once: the lost word lies exactly over the screw holes</td><td>Nobbs sees it and will not speak to them again</td></tr>
     <tr><td>Opening Fairfax’s sealed letter</td><td>Discovery 6: the full answer</td><td>None beyond the Meddle die</td></tr>
     <tr><td>Taking the rubbing to your own room</td><td>A close study of how it changes</td><td>Pell now follows you, not the empty room</td></tr>
     <tr><td>Making a new rubbing or photograph</td><td>A perfect record of the brass for the survey</td><td>A second image: it must also be burned, or Pell follows its keeper</td></tr>

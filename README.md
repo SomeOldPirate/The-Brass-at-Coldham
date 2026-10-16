@@ -16,7 +16,7 @@ An adventure module for the `jamesian-dark` system on Foundry V14. No scripts; o
 | | |
 |---|---|
 | Haunting | **The Brass at Coldham**: transgression, thing, tether, restitution and the narrator's frame; five warnings, six Provenance discoveries and eleven glimpses, ready to speak from; a reference sheet on the Notes tab. |
-| Investigators | Dr Edmund Hale, Miss Constance Arbery (with her half-plate camera), Rev. Francis Pym, Mr George Thursby. All at Notice 1 and unassigned. |
+| Investigators | Dr Edmund Hale (with Fairfax's letter to him, the opening handout), Miss Constance Arbery (with her half-plate camera), Rev. Francis Pym, Mr George Thursby. All at Notice 1 and unassigned. |
 | Curios | Fairfax's rubbing, his notebook, his sealed letter, Kirby's *Norfolk Brasses*, the churchwardens' accounts for 1688. |
 | Journal | The scenario in full, a page per section, for the GM. |
 
