@@ -27,11 +27,13 @@ export const ids = {
   accounts: id("Accounts"),
   camera: id("Camera"),
   haleLetter: id("HaleLetter"),
+  inscription: id("Inscription"),
 
   journal: id("Journal"),
   pages: {
     using: id("PgUsing"),
     background: id("PgBackground"),
+    history: id("PgHistory"),
     thing: id("PgThing"),
     investigators: id("PgCompany"),
     opening: id("PgOpening"),

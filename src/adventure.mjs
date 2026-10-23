@@ -4,7 +4,7 @@
  */
 
 import { ids } from "./ids.mjs";
-import { pages, hauntingNotes, haleLetter } from "./journal.mjs";
+import { pages, hauntingNotes, haleLetter, inscription } from "./journal.mjs";
 
 export const MODULE_ID = "brass-at-coldham";
 const SYSTEM_ID = "jamesian-dark";
@@ -133,6 +133,9 @@ const investigators = [
 
 // A player sees the description once the Curio is handed to them, so each says only what they would learn.
 const items = [
+  // The handout given when they first examine the brass. Its text is already in paragraphs.
+  curio(ids.inscription, "The inscription on the Pell brass", "The chancel floor of St Edmund’s, in black-letter round the edge of the slab",
+    `The last line, along the foot, is pierced with screw holes and rotted with rust.</p>${inscription.replace(/<\/p>$/, "")}`, 50000),
   curio(ids.rubbing, "Fairfax’s rubbing of the Pell brass", "Fairfax’s room at the rectory, in his tin case of rubbings",
     "A heelball rubbing of the brass of Master Adam Pell, rector of St Edmund’s, Coldham, 1452 to 1479: a tall figure in mass vestments, its face plain to see.", 100000),
   curio(ids.notebook, "Fairfax’s notebook", "Fairfax’s room at the rectory, among his boxed effects",
@@ -140,7 +143,7 @@ const items = [
   curio(ids.letter, "Fairfax’s sealed letter", "Coldham rectory, among Fairfax’s effects",
     "Sealed, addressed to his sister, and never posted.", 300000),
   curio(ids.kirby, "Kirby’s Norfolk Brasses (1838)", "The Rev. Mr Bream’s study at the rectory",
-    "The entry for Coldham records the Pell brass from inside the squire’s pew. It prints the inscription as far as <em>Qui me effigiat…</em> and marks the brass “imperfect”, the last line lying under the rail. A footnote guesses the rest: <em>pro me oret</em>, “let him pray for me”. “A pleasing sentiment,” Kirby adds, “and one the brass-rubber may take as an invitation.”", 400000),
+    "The entry for Coldham records the Pell brass from inside the squire’s pew. It prints the inscription as far as <em>Qui me effigiat…</em> and marks the brass “imperfect”, the last line lying under the rail. A footnote guesses the rest: <em>pro me oret</em>, “let him pray for me”. “A pleasing sentiment,” Kirby adds, “and one the brass-rubber may take as an invitation.” He blames the scraped face on Puritan zeal, and notes that Mr Cotman’s <em>Sepulchral Brasses</em> (1819) omits Coldham altogether, the brass being then within the Squire’s seat.", 400000),
   curio(ids.accounts, "The churchwardens’ accounts, 1688", "The parish chest at the rectory",
     "Payments for “faggots to burn ye picture upon ye stone”, for “setting ye Squire’s pew over Mr Pell” and for “long skrewes to fasten ye same through Mr Pell his writing”, and an older entry copied in, for “scraping ye face of Mr Pell”.", 500000)
 ].map(i => ({ ...i, folder: ids.folders.items }));
@@ -173,7 +176,7 @@ export const adventure = {
   _id: ids.adventure,
   name: TITLE,
   img: banner,
-  caption: "<p>A one-session playtest scenario for Jamesian Dark, for two to four players, set in Norfolk in October 1908.</p>",
+  caption: "<p>A one-session playtest scenario for Jamesian Dark, for a GM and one to three players, set in Norfolk in October 1908.</p>",
   description: "<p>A dead antiquary’s brass rubbing has brought something home with it, and the Investigators have come to finish his work.</p><p>Importing brings in the Haunting with its warnings, Provenance discoveries and glimpses filled in; four Investigators ready to hand out; the Curios they may find; and the whole scenario as a journal for the GM.</p>",
   actors: [haunting, ...investigators],
   items,
