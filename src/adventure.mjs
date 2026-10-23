@@ -144,7 +144,7 @@ const items = [
     "Sealed, addressed to his sister, and never posted.", 300000),
   curio(ids.kirby, "Kirby’s Norfolk Brasses (1838)", "The Rev. Mr Bream’s study at the rectory",
     "The entry for Coldham records the Pell brass from inside the squire’s pew. It prints the inscription as far as <em>Qui me effigiat…</em> and marks the brass “imperfect”, the last line lying under the rail. A footnote guesses the rest: <em>pro me oret</em>, “let him pray for me”. “A pleasing sentiment,” Kirby adds, “and one the brass-rubber may take as an invitation.” He blames the scraped face on Puritan zeal, and notes that Mr Cotman’s <em>Sepulchral Brasses</em> (1819) omits Coldham altogether, the brass being then within the Squire’s seat.", 400000),
-  curio(ids.accounts, "The churchwardens’ accounts, 1688", "The parish chest at the rectory",
+  curio(ids.accounts, "The churchwardens’ accounts, 1688", "The parish chest in the vestry of St Edmund’s",
     "Payments for “faggots to burn ye picture upon ye stone”, for “setting ye Squire’s pew over Mr Pell” and for “long skrewes to fasten ye same through Mr Pell his writing”, and an older entry copied in, for “scraping ye face of Mr Pell”.", 500000)
 ].map(i => ({ ...i, folder: ids.folders.items }));
 
