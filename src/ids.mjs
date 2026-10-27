@@ -23,6 +23,7 @@ export const ids = {
   rubbing: id("Rubbing"),
   notebook: id("Notebook"),
   letter: id("Letter"),
+  letterOpened: id("LetterOpened"),
   kirby: id("Kirby"),
   accounts: id("Accounts"),
   camera: id("Camera"),

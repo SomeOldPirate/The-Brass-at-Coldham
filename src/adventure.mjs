@@ -4,7 +4,7 @@
  */
 
 import { ids } from "./ids.mjs";
-import { pages, hauntingNotes, haleLetter, inscription } from "./journal.mjs";
+import { pages, hauntingNotes, haleLetter, inscription, sealedLetter } from "./journal.mjs";
 
 export const MODULE_ID = "brass-at-coldham";
 const SYSTEM_ID = "jamesian-dark";
@@ -39,6 +39,21 @@ const provenance = [
   ["Fairfax’s sealed letter", "Addressed to his sister, never posted. He understood, too late, that the rubbing must go back to the stone."]
 ];
 
+// Meddling shortcuts, then solitude bargains: what is offered, and what it gets them (and costs).
+const bargains = [
+  ["Reading the inscription aloud", "Discovery 1 at once. No cost beyond the Meddle die."],
+  ["Unrolling the rubbing on the brass", "Discovery 1 at once: the lost word lies exactly over the screw holes. Nobbs sees it and will not speak to them again."],
+  ["Opening Fairfax’s sealed letter", "Discovery 6: the full answer. No cost beyond the Meddle die."],
+  ["Taking the rubbing to your own room", "A close study of how it changes. Pell now follows you, not the empty room."],
+  ["Making a new rubbing or photograph", "A perfect record of the brass for the survey. A second image: it must also be burned, or Pell follows its keeper."],
+  ["Going to the church after dark", "Seeing the stone as Pell sees it. You are alone on the causeway."],
+  ["Solitude: “Bream would be grateful if someone fetched his spectacles from the vestry before dark.”", "One Investigator, the causeway, dusk."],
+  ["Solitude: “Dr Lacey will see one of you after surgery, but he won’t talk in front of a crowd.”", "The talk is safe; the walk home in the dark is not."],
+  ["Solitude: “Somebody ought to sit up with the rubbing and see what it does.”", "Once the others are asleep, the watcher is alone, and learns whose face is coming through."]
+];
+
+const lure = "Pell cannot come to company, so he shows people what will bring them out alone. He wears the faces he has taken. At dusk, someone sees Fairfax standing on the causeway, looking back towards the rectory (use this on Pym first; he knew him). Once the face on the rubbing has begun to change, someone at a window sees a companion walking alone towards the church, though that companion is in the study. From Fairfax’s empty room comes the sound of someone making a rubbing. All of these are atmosphere, so they can reach anyone at any Notice. Anyone who stops to look properly before following makes an Investigating roll: on a 4 or more, they see that the face does not move as a face should. It is drawn on.";
+
 // Never describe him whole. In rough order of nearness.
 const glimpses = [
   "The smell of heelball and cold candle.",
@@ -65,11 +80,13 @@ const haunting = {
     transgression: "In early September 1908 Mr Lionel Fairfax, against the sexton’s advice, unscrewed the squire’s pew over Master Adam Pell’s brass in St Edmund’s, dragged it aside and took up the rail. The last line beneath was pierced with screw holes and rotted with rust, but he rubbed the brass with heelball anyway and carried the rubbing back to his room at the rectory. Six weeks later, in mid-October, he was found drowned in the dyke beside the causeway, the front of his head smooth and featureless, the skin unbroken, like brass worn down by centuries of feet.",
     thing: "Master Adam Pell, rector of St Edmund’s from 1452 to 1479. Tall, thin and dry, dressed in something like a chasuble, and where his face should be there is only smooth, scraped skin. He wants a face: he walks between his likeness and whoever has noticed him, and he means to take that person’s face.",
     tether: "Every image of the brass: Fairfax’s rubbing, any new rubbing, a sketch, a photograph. Each one is a door, and Pell follows the person who keeps or makes it.",
-    restitution: "Every image of the brass must be laid on the stone and burned there, as in 1688. Then the pew goes back. That is all, and it is enough.",
+    restitution: "Every image of the brass must be laid on the stone and burned there, as in 1688. Then the pew goes back. That is all, and it is enough. Loose end: a photograph whose plate is never burned. Its keeper’s epilogue starts one band worse.",
+    lure,
     frame,
     escalation: 0,
     laidToRest: false,
     warnings: warnings.map((text, i) => ({ id: ids.entry("Warn", i + 1), text })),
+    bargains: bargains.map(([text, gain], i) => ({ id: ids.entry("Bargain", i + 1), text, gain })),
     provenance: provenance.map(([title, text], i) => ({ id: ids.entry("Prov", i + 1), title, text, found: false })),
     glimpses: glimpses.map((text, i) => ({ id: ids.entry("Glimpse", i + 1), text })),
     notes: hauntingNotes
@@ -142,6 +159,9 @@ const items = [
     "His last weeks: scraping at night, the rubbing re-rolled, smears on his pillow, “he is nearer each night”, “I did not know my own face in the glass this morning.”", 200000),
   curio(ids.letter, "Fairfax’s sealed letter", "Coldham rectory, among Fairfax’s effects",
     "Sealed, addressed to his sister, and never posted.", 300000),
+  // The handout for whoever opens the sealed letter (Discovery 6). Its text is already in paragraphs.
+  curio(ids.letterOpened, "Fairfax’s letter to his sister", "Fairfax’s sealed letter, opened",
+    `Unposted, in Fairfax’s hand.</p>${sealedLetter.replace(/<\/p>$/, "")}`, 350000),
   curio(ids.kirby, "Kirby’s Norfolk Brasses (1838)", "The Rev. Mr Bream’s study at the rectory",
     "The entry for Coldham records the Pell brass from inside the squire’s pew. It prints the inscription as far as <em>Qui me effigiat…</em> and marks the brass “imperfect”, the last line lying under the rail. A footnote guesses the rest: <em>pro me oret</em>, “let him pray for me”. “A pleasing sentiment,” Kirby adds, “and one the brass-rubber may take as an invitation.” He blames the scraped face on Puritan zeal, and notes that Mr Cotman’s <em>Sepulchral Brasses</em> (1819) omits Coldham altogether, the brass being then within the Squire’s seat.", 400000),
   curio(ids.accounts, "The churchwardens’ accounts, 1688", "The parish chest in the vestry of St Edmund’s",
@@ -177,7 +197,7 @@ export const adventure = {
   name: TITLE,
   img: banner,
   caption: "<p>A one-session playtest scenario for Jamesian Dark, for a GM and one to three players, set in Norfolk in October 1908.</p>",
-  description: "<p>A dead antiquary’s brass rubbing has brought something home with it, and the Investigators have come to finish his work.</p><p>Importing brings in the Haunting with its warnings, Provenance discoveries and glimpses filled in; four Investigators ready to hand out; the Curios they may find; and the whole scenario as a journal for the GM.</p>",
+  description: "<p>A dead antiquary’s brass rubbing has brought something home with it, and the Investigators have come to finish his work.</p><p>Importing brings in the Haunting with its warnings, bargains, Provenance discoveries and glimpses filled in; four Investigators ready to hand out; the Curios they may find; and the whole scenario as a journal for the GM.</p>",
   actors: [haunting, ...investigators],
   items,
   journal: [journal],

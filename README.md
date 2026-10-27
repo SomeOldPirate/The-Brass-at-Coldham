@@ -15,9 +15,9 @@ An adventure module for the `jamesian-dark` system on Foundry V14. No scripts; o
 
 | | |
 |---|---|
-| Haunting | **The Brass at Coldham**: transgression, thing, tether, restitution and the narrator's frame; five warnings, six Provenance discoveries and eleven glimpses, ready to speak from; a reference sheet on the Notes tab. |
+| Haunting | **The Brass at Coldham**: transgression, thing, tether, restitution, how Pell draws people apart and the narrator's frame; five warnings, nine bargains (six meddling, three solitude), six Provenance discoveries and eleven glimpses, ready to speak from; a reference sheet on the Notes tab. |
 | Investigators | Dr Edmund Hale (with Fairfax's letter to him, the opening handout), Miss Constance Arbery (with her half-plate camera), Rev. Francis Pym, Mr George Thursby. All at Notice 1 and unassigned. |
-| Curios | The inscription on the brass (a handout for when they first examine it), Fairfax's rubbing, his notebook, his sealed letter, Kirby's *Norfolk Brasses*, the churchwardens' accounts for 1688. |
+| Curios | The inscription on the brass (a handout for when they first examine it), Fairfax's rubbing, his notebook, his sealed letter (and the letter itself, a handout only for whoever opens it), Kirby's *Norfolk Brasses*, the churchwardens' accounts for 1688. |
 | Journal | The scenario in full, a page per section, for the GM, including its historical grounding (what is real and what is invented). |
 
 There are no scenes or maps.
@@ -27,11 +27,12 @@ There are no scenes or maps.
 - **Provenance** entries hold what each discovery *reveals*, because the sheet's reveal button reads them to the
   table. The safe and meddling routes are on the Haunting's Notes tab and in the journal.
 - **Warnings** are worded as the GM would say them to the players.
+- **Bargains** hold the meddling shortcut or solitude offer, then what it gets them and what it costs.
 - **Glimpses** are the scenario's five fragments plus the six from its Notice table.
 - **Temptations** are not printed on the Investigators' sheets. Miss Arbery's would tell her player that a
   photograph counts, and the scenario asks the GM not to. They are on the journal's Investigators page.
 - **Curio** descriptions say only what a player would learn on being handed the object. What is inside the
-  sealed letter is on the Haunting, as discovery 6.
+  sealed letter is a separate Curio, *Fairfax's letter to his sister*, to hand over only when it is opened.
 - The photograph is the scenario's **loose end**. If the plate is never burned, the GM ticks *A loose end* under the
   epilogue on Miss Arbery's sheet (Jamesian Dark 2.1.0), which moves her one band worse.
 - The local people (Bream, Mrs Tooley, Nobbs, Dr Lacey) are journal text. The system has no actor type for them.

@@ -12,6 +12,18 @@ const page = (id, label) => `@UUID[JournalEntry.${ids.journal}.JournalEntryPage.
 /** Fairfax's letter to Hale, the handout given to Hale's player at the start. */
 export const haleLetter = "Coldham Rectory, August 1908. My dear Hale, — St Edmund’s has a fine priest of about 1470, and an inscription Kirby marks imperfect, the last line being under the squire’s pew. Kirby guesses <em>pro me oret</em>, and says old Pell positively asks to be rubbed. I mean to have the pew up and settle it. Your eye on the result would oblige me greatly. — L. Fairfax";
 
+/** Fairfax's sealed letter to his sister, given only to whoever opens it (Discovery 6). */
+export const sealedLetter = `<p>Coldham Rectory,<br>Tuesday night, 13th October 1908</p>
+<p>My dear Agnes,</p>
+<p>I have begun this letter four times and burned three. I will finish this one, and you may think what you like of your brother when you read it.</p>
+<p>You know I came here for the brasses. There is one in the chancel, a priest named Pell, shut in under the squire’s pew since the time of James the Second. Kirby printed most of the inscription and guessed the rest: a request for prayers, he said, and an invitation to the brass-rubber. I believed him. I was so pleased with it that I wrote to Hale of Caius to boast. On the second of September I had the pew up and the rail off, and I rubbed it.</p>
+<p>The last line was spoilt, all screw holes and rust. Only <em>me secum d—</em> was left on the brass. But on my paper the word is whole. <em>Ducat.</em> <em>Qui me effigiat, me secum ducat</em>: whoever makes my likeness, let him lead me with him. Heelball cannot take up a letter that is not there, Agnes. I have tried for six weeks to believe otherwise.</p>
+<p>I have led him here. He walks at night between my room and the paper. He scrapes, as I scraped, and he leaves black wax on the door and on my pillow. The brass has no face (his own parish scraped it off, and I begin to understand them), but the figure on my rubbing has one now, and it is mine. This morning I did not know my own face in the glass. It is not that it is changed. It is that there is less of it.</p>
+<p>The churchwardens’ accounts are in the old chest in the vestry. In 1688 a drawing-master from Norwich sketched the brass, and six weeks later they took him out of the Broad. Old Nobbs told me that nobody would describe his face. The rector burned the drawing upon the stone, and the trouble stopped. It must be upon the stone. I tried my own grate, and in the morning the paper was whole.</p>
+<p>Tomorrow is the fourteenth. It is six weeks to the day since I took the rubbing, and it is the day Pell died. I mean to carry the rubbing to the church by daylight and burn it on the brass, and I will ask Nobbs to come with me. He has never come while anyone else was in the room. If I do it, I shall burn this letter too, and you will never read it.</p>
+<p>If you are reading it, then I did not. Whoever has my things must do it for me: lay the paper on the brass and burn it there, and every other likeness of it with it, and then put the pew back over him. Do not go alone. Do not make another likeness. And if they tell you not to look at me, my dear, do not look.</p>
+<p>Your loving brother,<br>Lionel</p>`;
+
 /** The inscription on the brass, the handout given when the Investigators first examine it. */
 export const inscription = `<p><em>Orate pro anima Magistri Ade Pell quondam rectoris huius ecclesie qui obiit xiiij die Octobris Anno Domini M CCCC lxxix cuius anime propicietur deus Amen. Qui me effigiat</em></p>
 <p><em>…me secum d…</em></p>
@@ -25,9 +37,9 @@ export const pages = [
 <p><em>A one-session playtest scenario for Jamesian Dark, for a GM and one to three players, set in Norfolk in October 1908. A dead antiquary’s brass rubbing has brought something home with it, and the Investigators have come to finish his work.</em></p>
 <p>Everything here is for the GM. What the adventure brought into your world:</p>
 <ul>
-  <li><strong>${actor(ids.haunting, "The Brass at Coldham")}</strong>, the Haunting. Its sheet holds the transgression, the thing, its tether and the restitution; the narrator’s frame; the five warnings, the six Provenance discoveries and a list of glimpses, to speak from at the table. Each Provenance discovery has a button that posts it to chat as a handout. Its Notes tab is a one-page reference for use during play.</li>
+  <li><strong>${actor(ids.haunting, "The Brass at Coldham")}</strong>, the Haunting. Its sheet holds the transgression, the thing, its tether and the restitution; how Pell draws people apart; the narrator’s frame; the five warnings, the bargains (meddling and solitude), the six Provenance discoveries and a list of glimpses, to speak from at the table. Each Provenance discovery has a button that posts it to chat as a handout. Its Notes tab is a one-page reference for use during play.</li>
   <li><strong>Four Investigators</strong>: ${actor(ids.hale, "Dr Edmund Hale")}, ${actor(ids.arbery, "Miss Constance Arbery")}, ${actor(ids.pym, "Rev. Francis Pym")} and ${actor(ids.thursby, "Mr George Thursby")}. Assign each to a player from the Actors sidebar (right-click, Configure Ownership). Each sheet’s notes say why they came. Their temptations are on the ${page(ids.pages.investigators, "Investigators")} page and are not printed on the sheets.</li>
-  <li><strong>Six Curios</strong> to hand over as they are found, by dragging them onto an Investigator’s sheet: ${item(ids.inscription, "the inscription on the brass")}, ${item(ids.rubbing, "Fairfax’s rubbing")}, ${item(ids.notebook, "his notebook")}, ${item(ids.letter, "his sealed letter")}, ${item(ids.kirby, "Kirby’s Norfolk Brasses")} and ${item(ids.accounts, "the churchwardens’ accounts")}. Miss Arbery already carries her camera, and Dr Hale ${item(ids.haleLetter, "Fairfax’s letter")}.</li>
+  <li><strong>Seven Curios</strong> to hand over as they are found, by dragging them onto an Investigator’s sheet: ${item(ids.inscription, "the inscription on the brass")}, ${item(ids.rubbing, "Fairfax’s rubbing")}, ${item(ids.notebook, "his notebook")}, ${item(ids.letter, "his sealed letter")} (and, only for whoever opens it, ${item(ids.letterOpened, "the letter itself")}), ${item(ids.kirby, "Kirby’s Norfolk Brasses")} and ${item(ids.accounts, "the churchwardens’ accounts")}. Miss Arbery already carries her camera, and Dr Hale ${item(ids.haleLetter, "Fairfax’s letter")}.</li>
   <li><strong>This journal</strong>, the scenario in full.</li>
 </ul>
 <p>The scenario has one loose end, the photograph (see ${page(ids.pages.rest, "Laying it to rest")}). If it applies, tick <em>A loose end</em> under the epilogue on Miss Arbery’s sheet, and the system moves her one band worse.</p>
@@ -57,7 +69,7 @@ export const pages = [
 <p><strong>The damage.</strong> <em>Real:</em> in 1643–44 William Dowsing visited more than 250 churches in Suffolk and Cambridgeshire, removing “superstitious inscriptions”; his journal records taking away “2 popish Inscriptions with Ora pro nobis”. Norfolk suffered its own iconoclasm in the same years. <em>Invented:</em> Kirby, like any Victorian, blames Pell’s scraped face and pierced last line on the Puritans. ${item(ids.accounts, "The churchwardens’ accounts")} show the truth: the parish did it, out of fear rather than doctrine, the face in Pell’s own time and the screws in 1688.</p>
 <p><strong>The records.</strong> <em>Real:</em> in 1908 there were no county record offices; parish records stayed in the parish. The old ones lived in an oak parish chest in the church, traditionally with three locks, the keys held by the incumbent and the two churchwardens, so that no one could open it alone. After Rose’s Act of 1812, registers in current use were kept in an iron box, often in the rector’s own house. <em>Ours:</em> Coldham follows the custom, with the usual country laxity: the churchwardens’ keys have long lived with the sexton.</p>
 <p><strong>The lantern men.</strong> <em>Real:</em> East Anglian fen folklore tells of lights that lure travellers to their deaths in the reed beds. They come to whistling, and the remedy is to lie face down with your mouth in the mud. <em>Ours:</em> this is the village’s explanation for Fairfax, found face down in two feet of water beside the causeway. At the Wherry they say he was whistling after dark. It is comfortable, it is wrong, and it hides the truth. Nobbs knows better and will not say so in the pub.</p>
-<p><strong>The inscription.</strong> Pell’s inscription follows the real formula: a request for prayers, name and office, date of death, a closing blessing. That is why Kirby’s guess is so natural. Pell died on 14 October, so if Fairfax rubbed the brass on 2 September, the six weeks end on the anniversary. Make it exact if you like.</p>
+<p><strong>The inscription.</strong> Pell’s inscription follows the real formula: a request for prayers, name and office, date of death, a closing blessing. That is why Kirby’s guess is so natural. Pell died on 14 October, so if Fairfax rubbed the brass on 2 September, the six weeks end on the anniversary. Fairfax’s sealed letter makes it exact: he rubbed the brass on Wednesday 2 September and drowned on Wednesday 14 October.</p>
 <p><strong>For more colour:</strong> James’s own <em>Suffolk and Norfolk</em> (1930) is a guide to the two counties’ churches, full of real detail to borrow for St Edmund’s.</p>`
   },
   {
@@ -99,7 +111,9 @@ export const pages = [
 <p><strong>${item(ids.haleLetter, "Fairfax’s letter to Hale")}.</strong> Give this to Hale’s player at the start:</p>
 <blockquote><p>${haleLetter}</p></blockquote>
 <p><strong>${item(ids.inscription, "The inscription")}.</strong> Give this when the Investigators first examine the brass. It runs in black-letter round the edge of the slab; the last line, along the foot, is pierced with screw holes.</p>
-<blockquote>${inscription}</blockquote>`
+<blockquote>${inscription}</blockquote>
+<p><strong>${item(ids.letter, "Fairfax’s sealed letter")}.</strong> Give this only to whoever opens it (Discovery 6), as ${item(ids.letterOpened, "Fairfax’s letter to his sister")}. Opening it is meddling.</p>
+<blockquote>${sealedLetter}</blockquote>`
   },
   {
     _id: ids.pages.opening,
@@ -181,7 +195,21 @@ export const pages = [
   <li><strong>Sunday.</strong> Bream takes morning service at St Edmund’s, so everyone is in the church in daylight, with the brass a few feet from the altar rail. The answer should come together today. Night three: anyone at Notice 5 or more who is alone meets Pell close at hand. The burning, if they attempt it, happens tonight.</li>
   <li><strong>Monday morning.</strong> The carrier arrives. Whoever is still at Coldham leaves, one way or another. Play the epilogues.</li>
 </ol>
-<p><strong>Pacing.</strong> If the table is cautious and Notice stays low, have Bream send someone across the causeway at dusk on an errand, or offer a bargain. If they are reckless and Notice climbs fast, give them the cosy scenes they’ve earned. Company is safe.</p>`
+<p><strong>Pacing.</strong> If the table is cautious and Notice stays low, have Bream send someone across the causeway at dusk on an errand, or offer a bargain. If they are reckless and Notice climbs fast, give them the cosy scenes they’ve earned. Company is safe.</p>
+<p><strong>Keeping solitude in play.</strong> The rectory gives each guest a room of their own; Mrs Tooley would not hear of anything else. So the nights are solitary by default, and whoever sits up to watch while the others sleep is alone. By day, make the clock plain: the cart comes on Monday, and there are more leads than Investigators. The parish chest is in the vestry across the causeway, Dr Lacey sees visitors only after evening surgery, and Nobbs talks only at the Wherry. Every lead the group follows together is two it does not.</p>
+<p><strong>Solitude bargains.</strong> Offer these as you would a meddling bargain, and name the risk plainly:</p>
+<ul>
+  <li>“Bream would be grateful if someone fetched his spectacles from the vestry before dark.” One Investigator, the causeway, dusk.</li>
+  <li>“Dr Lacey will see one of you after surgery, but he won’t talk in front of a crowd.” The talk is safe; the walk home in the dark is not.</li>
+  <li>“Somebody ought to sit up with the rubbing and see what it does.” Once the others are asleep, the watcher is alone, and learns whose face is coming through.</li>
+</ul>
+<p><strong>How Pell draws people apart.</strong> Pell cannot come to company, so he shows people what will bring them out alone. He wears the faces he has taken:</p>
+<ul>
+  <li>At dusk, someone sees Fairfax standing on the causeway, looking back towards the rectory. Use this on Pym first; he knew him.</li>
+  <li>Once the face on the rubbing has begun to change, someone at a window sees a companion walking alone towards the church, though that companion is in the study.</li>
+  <li>From Fairfax’s empty room comes the sound of someone making a rubbing.</li>
+</ul>
+<p>All of these are atmosphere, so they can reach anyone at any Notice. Anyone who stops to look properly before following makes an Investigating roll: on a 4 or more, they see that the face does not move as a face should. It is drawn on.</p>`
   },
   {
     _id: ids.pages.rest,
@@ -256,5 +284,6 @@ export const hauntingNotes = `
   <li><strong>Saturday.</strong> By day, someone who knew Fairfax (ideally Pym) should look closely at the rubbing and recognise his face. At night, Pell reaches whoever has the highest Notice, at the level their Notice allows.</li>
   <li><strong>Sunday.</strong> Anyone at Notice 5 or more who is alone meets Pell close at hand. The burning, if they attempt it, happens tonight.</li>
 </ul>
+<p><strong>Solitude.</strong> Each guest has a room of their own, so the nights are solitary; whoever sits up to watch is alone. By day there are more leads than Investigators. The solitude bargains and how Pell draws people apart are on the Clues and Matter tabs.</p>
 <p><strong>Burning it anywhere else.</strong> An image burned anywhere but on the stone does not burn. It chars and curls in the grate, and in the morning it is found whole, rolled the other way, with the new face a little clearer. Not meddling; it costs only the night, and should send them to the church.</p>
 <p><strong>The photograph.</strong> If Miss Arbery has photographed the brass and the plate isn’t burned, the rite seems to work. When the plate is developed in Norwich, the brass has a face, and it is hers. Her epilogue starts one band worse: tick <em>A loose end</em> under the epilogue on her sheet.</p>`;
