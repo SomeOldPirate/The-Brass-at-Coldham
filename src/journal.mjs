@@ -232,7 +232,7 @@ export const pages = [
   <li><strong>Notice pace.</strong> Who reached 5 and 6, and on which night? Ideally someone reaches 5 on Saturday night and the Visit is a live threat on Sunday.</li>
   <li><strong>Legibility.</strong> Did players ask “is this meddling?” Did any meddling feel like a gotcha? If someone asks about the camera, answer honestly; the twist only works if they never think to ask.</li>
   <li><strong>Solitude.</strong> Did the rule shape where people went and who walked the causeway? Did the cosy scenes feel safe?</li>
-  <li><strong>The Visit and epilogue bands.</strong> Did the Visit feel fair? Did the split for Visit survivors feel right: never quite well again if rescued on a 4 or more, ruined if they survived at a cost?</li>
+  <li><strong>The Visit and epilogue bands.</strong> Did the Visit feel fair? Did Ruined feel earned, now that only the Visit or a loose end can cause it? Did anyone at Notice 6 try to seek the Visit out?</li>
   <li><strong>Safe routes.</strong> Could the group have solved it without meddling at all, and would that have been satisfying?</li>
 </ul>`
   }
